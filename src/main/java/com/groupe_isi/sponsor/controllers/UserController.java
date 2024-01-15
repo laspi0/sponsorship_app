@@ -1,9 +1,11 @@
 package com.groupe_isi.sponsor.controllers;
 
 import com.groupe_isi.sponsor.config.Db;
+import com.groupe_isi.sponsor.Outils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -29,21 +31,20 @@ public class UserController {
     private PasswordField passwordFld;
 
     @FXML
-    void getLogin(ActionEvent event) {
+    void getLogin(ActionEvent event) throws IOException {
         // Récupérer les informations de connexion depuis les champs de texte
         String username = loginFld.getText();
         String password = passwordFld.getText();
+        Outils.load(event,"Dashboard","page/admin/dashboard.fxml");
+//        Outils.load(event,"Dashboard","page/admin/candidat.fxml");
 
-        // Appeler la méthode pour se connecter à la base de données
         boolean isConnected = authenticateUser(username, password);
 
-        // Vous pouvez ajouter ici la logique pour traiter la connexion réussie ou échouée
         if (isConnected) {
             System.out.println("Connexion réussie !");
-            // Ajoutez ici le code à exécuter après une connexion réussie.
+
         } else {
             System.out.println("Échec de la connexion.");
-            // Ajoutez ici le code à exécuter en cas d'échec de connexion.
         }
     }
 
@@ -65,6 +66,6 @@ public class UserController {
         }
     }
 
-    // Méthode pour rediriger vers la page du tableau de bord
+
 
 }
