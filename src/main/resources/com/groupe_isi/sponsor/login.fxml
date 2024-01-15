@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.UserController">
+   <children>
+      <ImageView fitHeight="547.0" fitWidth="988.0" layoutX="-6.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/back.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="box" layoutX="242.0" layoutY="71.0" prefHeight="376.0" prefWidth="477.0" style="-fx-border-color: WHITE; -fx-border-radius: 15;">
+         <children>
+            <Text fill="WHITE" layoutX="187.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONNEXION">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="365.0" layoutY="195.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: white; -fx-border-radius: 5;">
+         <children>
+            <TextField fx:id="loginFld" layoutX="32.0" layoutY="2.0" prefHeight="34.0" prefWidth="200.0" promptText="Entrer votre login" style="-fx-background-color: transparent;" />
+            <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="365.0" layoutY="270.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: white; -fx-border-radius: 5;">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/padlock.png" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="passwordFld" layoutX="26.0" layoutY="5.0" prefHeight="25.0" prefWidth="200.0" promptText="Entrer votre mot de passe" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="365.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="365.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="363.0" layoutY="340.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: white; -fx-border-radius: 5;">
+         <children>
+            <Button fx:id="connexionBtn" layoutX="-2.0" layoutY="1.0" mnemonicParsing="false" onAction="#getLogin" prefHeight="34.0" prefWidth="234.0" style="-fx-background-color: transparent;" text="Se connecter" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
