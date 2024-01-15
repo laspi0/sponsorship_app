@@ -18,14 +18,11 @@ public class DashboardController implements Initializable {
     @FXML
     private Button candidatBtn;
 
-
-
-
     @FXML
     private Button electeurBtn;
 
     @FXML
-    private Button parrainageBtn;
+    private Button parrainBtn;
 
     @FXML
     private BorderPane borderpane1;
@@ -45,17 +42,17 @@ public class DashboardController implements Initializable {
 
     @FXML
     void getElecteur(ActionEvent event) throws IOException {
-        URL  location =getClass().getResource("page/admin/candidat.fxml");
-        if (location != null) {
-            System.out.println("je suis la");
-        }
-//        AnchorPane view = FXMLLoader.load(getClass().getResource("page/admin/candidat.fxml"));
-//        borderpane1.setCenter(view);
+        URL url = getClass().getResource("electeur.fxml");
+        AnchorPane view = FXMLLoader.load(url);
+        borderpane1.setCenter(view);
     }
 
     @FXML
     void getParrains(ActionEvent event) throws IOException {
-        AnchorPane view = FXMLLoader.load(getClass().getResource("page/admin/candidat.fxml"));
+        URL url = getClass().getResource("parrainage.fxml");
+        AnchorPane view = FXMLLoader.load(url);
         borderpane1.setCenter(view);
     }
+
+
 }
