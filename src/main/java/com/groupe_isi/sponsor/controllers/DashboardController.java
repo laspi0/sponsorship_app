@@ -1,6 +1,5 @@
 package com.groupe_isi.sponsor.controllers;
 
-import com.groupe_isi.sponsor.Outils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,10 +34,11 @@ public class DashboardController implements Initializable {
     @FXML
     void getCandidat(ActionEvent event) throws IOException {
 
-        URL url = getClass().getResource("candidat.fxml");
+        URL url = getClass().getResource("utilisateur.fxml");
         AnchorPane view = FXMLLoader.load(url);
                 borderpane1.setCenter(view);
     }
+
 
     @FXML
     void getElecteur(ActionEvent event) throws IOException {

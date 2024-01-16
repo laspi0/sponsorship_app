@@ -5,12 +5,15 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.DashboardController">
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.DashboardController">
    <children>
-      <Text layoutX="528.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text layoutX="528.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le Dashboard!">
          <font>
-            <Font size="96.0" />
+            <Font size="24.0" />
          </font>
       </Text>
+      <Button layoutX="528.0" layoutY="250.0"  text="Désactiver l'utilisateur sélectionné" />
+      <!-- Ajoutez d'autres éléments d'interface utilisateur au besoin -->
    </children>
 </AnchorPane>
