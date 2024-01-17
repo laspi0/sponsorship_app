@@ -12,7 +12,8 @@
    <children>
       <AnchorPane layoutX="811.0" layoutY="25.0" prefHeight="458.0" prefWidth="316.0" style="-fx-background-color: transparent; -fx-border-color: white;" />
       <Button layoutX="322.0" layoutY="491.0" onAction="#deactivateUser" style="-fx-background-color: transparent; -fx-border-color: white;" text="Désactiver l'utilisateur sélectionné" textFill="WHITE" />
-
+      <Button layoutX="322.0" layoutY="525.0" onAction="#activateUser" style="-fx-background-color: transparent; -fx-border-color: white;" text="Activer l'utilisateur sélectionné" textFill="WHITE" />
+      <Button layoutX="322.0" layoutY="559.0" onAction="#deleteUser" style="-fx-background-color: transparent; -fx-border-color: white;" text="Supprimer l'utilisateur sélectionné" textFill="WHITE" />
       <ComboBox fx:id="profileComboBox" layoutX="868.0" layoutY="326.0" prefHeight="25.0" prefWidth="202.0" promptText="Sélectionnez un profil" style="-fx-background-color: transparent; -fx-border-color: white;">
          <items>
             <FXCollections fx:factory="observableArrayList">

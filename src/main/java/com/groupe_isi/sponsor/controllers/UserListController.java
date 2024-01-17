@@ -83,6 +83,28 @@ public class UserListController {
         }
     }
 
+
+    @FXML
+    private void deleteUser() {
+        User selectedUser = userTableView.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            userRepository.deleteUser(selectedUser);
+            loadUsers();
+        }
+    }
+
+
+
+    @FXML
+    private void activateUser() {
+        User selectedUser = userTableView.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            userRepository.activateUser(selectedUser);
+            loadUsers();
+        }
+    }
+
+
     private void loadUsers() {
         List<User> users = userRepository.getAllUsers();
         userTableView.getItems().setAll(users);

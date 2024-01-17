@@ -38,6 +38,29 @@ public class UserRepository {
         return userList;
     }
 
+    public void activateUser(User user) {
+        try (Connection connection = Db.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE user SET actived = 1 WHERE id = ?")) {
+
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteUser(User user) {
+        try (Connection connection = Db.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM user WHERE id = ?")) {
+
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void deactivateUser(User user) {
         try (Connection connection = Db.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE user SET actived = 0 WHERE id = ?")) {
