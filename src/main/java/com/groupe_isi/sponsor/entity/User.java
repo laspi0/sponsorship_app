@@ -86,6 +86,8 @@ public class User {
                 ", Actived: " + actived +
                 ", Profil: " + profil;
     }
+
+
     private int actived;
         private Integer profil;
     }

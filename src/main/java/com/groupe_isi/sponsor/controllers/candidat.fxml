@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: #2E7D32;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.UserListController">
+   <children>
+      <VBox alignment="CENTER" spacing="10">
+         <Label style="-fx-font-size: 24; -fx-text-fill: white;" text="Liste des Utilisateurs" />
+         <ListView fx:id="userListView" prefHeight="345.0" prefWidth="604.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #1B5E20; -fx-border-width: 2; -fx-font-size: 16;">
+            <!-- Ajoutez d'autres styles au besoin -->
+         </ListView>
+         <Button style="-fx-font-size: 18; -fx-background-color: #EF5350; -fx-text-fill: white; -fx-border-color: #B71C1C;" text="Désactiver l'utilisateur sélectionné">
+            <!-- Ajoutez d'autres styles au besoin -->
+         </Button>
+      </VBox>
+      <AnchorPane fx:id="create" layoutX="623.0" layoutY="41.0" prefHeight="360.0" prefWidth="505.0">
+         <children>
+            <Text layoutX="293.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ajouter  un user" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

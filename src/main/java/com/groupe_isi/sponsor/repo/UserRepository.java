@@ -50,4 +50,23 @@ public class UserRepository {
             e.printStackTrace();
         }
     }
+
+    public void createUser(User user) {
+        try (Connection connection = Db.getConnection()) {
+            String query = "INSERT INTO user (nom, prenom, login, password, actived, profil) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, user.getNom());
+                preparedStatement.setString(2, user.getPrenom());
+                preparedStatement.setString(3, user.getLogin());
+                preparedStatement.setString(4, user.getPassword());
+                preparedStatement.setInt(5, user.getActived());
+                preparedStatement.setInt(6, user.getProfil());
+
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Gérer l'exception selon vos besoins (par exemple, afficher un message d'erreur à l'utilisateur)
+        }
+    }
 }
