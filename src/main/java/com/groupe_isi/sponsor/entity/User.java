@@ -2,17 +2,27 @@ package com.groupe_isi.sponsor.entity;
 
 public class User {
 
-        private int id;
+    private int id;
+    private String nom;
+    private String prenom;
+    private String login;
+    private String password;
+    private int actived;
+    private Integer profil;
+
+    public User(int id, String nom, String prenom, String login, String password, int actived, Integer profil) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.login = login;
+        this.password = password;
+        this.actived = actived;
+        this.profil = profil;
+    }
 
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
 
     public String getNom() {
         return nom;
@@ -62,20 +72,6 @@ public class User {
         this.profil = profil;
     }
 
-    private String nom;
-        private String prenom;
-        private String login;
-        private String password;
-
-    public User(int id, String nom, String prenom, String login, String password, int actived, Integer profil) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.login = login;
-        this.password = password;
-        this.actived = actived;
-        this.profil = profil;
-    }
     @Override
     public String toString() {
         return "ID: " + id +
@@ -86,10 +82,4 @@ public class User {
                 ", Actived: " + actived +
                 ", Profil: " + profil;
     }
-
-
-    private int actived;
-        private Integer profil;
-    }
-
-
+}

@@ -3,10 +3,7 @@ package com.groupe_isi.sponsor.controllers;
 import com.groupe_isi.sponsor.entity.User;
 import com.groupe_isi.sponsor.repo.UserRepository;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.List;
@@ -15,6 +12,9 @@ public class UserListController {
 
     @FXML
     private TableView<User> userTableView;
+
+    @FXML
+    private ComboBox<?> profileComboBox;
 
     @FXML
     private Button deactivateButton;
@@ -62,6 +62,13 @@ public class UserListController {
 
         TableColumn<User, Integer> profilColumn = new TableColumn<>("Profil");
         profilColumn.setCellValueFactory(new PropertyValueFactory<>("profil"));
+        idColumn.setPrefWidth(50);
+        nomColumn.setPrefWidth(100);
+        prenomColumn.setPrefWidth(100);
+        loginColumn.setPrefWidth(150);
+        passwordColumn.setPrefWidth(150);
+        activedColumn.setPrefWidth(80);
+        profilColumn.setPrefWidth(80);
 
         // Ajoutez les colonnes à la TableView
         userTableView.getColumns().addAll(idColumn, nomColumn, prenomColumn, loginColumn, passwordColumn, activedColumn, profilColumn);
@@ -81,6 +88,9 @@ public class UserListController {
         userTableView.getItems().setAll(users);
     }
 
+
+
+
     @FXML
     private void createUser() {
         // Récupérer les valeurs des champs
@@ -89,8 +99,11 @@ public class UserListController {
         String login = loginField.getText();
         String password = passwordField.getText();
 
+        // Récupérer la valeur sélectionnée dans la ComboBox
+        Integer profil = profileComboBox.getSelectionModel().getSelectedItem().equals("Candidat") ? 2 : 3;
+
         // Créer un nouvel utilisateur
-        User newUser = new User(0, nom, prenom, login, password, 1, null); // Assurez-vous d'ajuster les valeurs par défaut
+        User newUser = new User(0, nom, prenom, login, password, 1, profil);
 
         // Ajouter l'utilisateur à la base de données
         userRepository.createUser(newUser);
@@ -101,6 +114,7 @@ public class UserListController {
         // Effacer les champs du formulaire
         clearForm();
     }
+
 
 
 
