@@ -12,13 +12,10 @@
       <VBox alignment="CENTER" spacing="10">
          <Label style="-fx-font-size: 24; -fx-text-fill: white;" text="Liste des Utilisateurs" />
          <ListView fx:id="userListView" prefHeight="345.0" prefWidth="604.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #1B5E20; -fx-border-width: 2; -fx-font-size: 16;">
-            <!-- Ajoutez d'autres styles au besoin -->
          </ListView>
          <Button style="-fx-font-size: 18; -fx-background-color: #EF5350; -fx-text-fill: white; -fx-border-color: #B71C1C;" text="Désactiver l'utilisateur sélectionné" onAction="#deactivateUserButtonClicked">
-            <!-- Ajoutez d'autres styles au besoin -->
          </Button>
          <Button style="-fx-font-size: 18; -fx-background-color: #66BB6A; -fx-text-fill: white; -fx-border-color: #1B5E20;" text="Activer l'utilisateur sélectionné" onAction="#activateUserButtonClicked">
-            <!-- Ajoutez d'autres styles au besoin -->
          </Button>
       </VBox>
       <AnchorPane fx:id="create" layoutX="623.0" layoutY="41.0" prefHeight="360.0" prefWidth="505.0">

@@ -4,14 +4,9 @@ import com.groupe_isi.sponsor.config.Db;
 import com.groupe_isi.sponsor.Outils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -32,23 +27,28 @@ public class UserController {
 
     @FXML
     void getLogin(ActionEvent event) throws IOException {
-        // Récupérer les informations de connexion depuis les champs de texte
         String username = loginFld.getText();
         String password = passwordFld.getText();
-        Outils.load(event,"Dashboard","page/admin/dashboard.fxml");
-//        Outils.load(event,"Dashboard","page/admin/candidat.fxml");
 
-        boolean isConnected = authenticateUser(username, password);
+        boolean isAuthenticated = authenticateUser(username, password);
 
-        if (isConnected) {
+        if (isAuthenticated) {
             System.out.println("Connexion réussie !");
-
+            String userRole = getUserRole(username, password);
+            if ("ROLE_ADMIN".equals(userRole)) {
+                Outils.load(event, "Dashboard", "page/admin/dashboard.fxml");
+            } else if ("ROLE_CANDIDAT".equals(userRole)) {
+                Outils.load(event, "Candidat Page", "page/candidat/candidat.fxml");
+            } else if ("ROLE_ELECTEUR".equals(userRole)) {
+                Outils.load(event, "Electeur Page", "page/electeur/electeur.fxml");
+            } else {
+                System.out.println("Role non reconnu");
+            }
         } else {
             System.out.println("Échec de la connexion.");
         }
     }
 
-    // Méthode pour authentifier l'utilisateur en se connectant à la base de données
     private boolean authenticateUser(String username, String password) {
         try (Connection connection = Db.getConnection()) {
             String query = "SELECT * FROM user WHERE login = ? AND password = ?";
@@ -56,7 +56,6 @@ public class UserController {
                 preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    // Si une ligne est renvoyée, l'utilisateur est authentifié
                     return resultSet.next();
                 }
             }
@@ -66,7 +65,24 @@ public class UserController {
         }
     }
 
-
-
-
+    private String getUserRole(String username, String password) {
+        try (Connection connection = Db.getConnection()) {
+            String query = "SELECT role.name " +
+                    "FROM user " +
+                    "INNER JOIN role ON user.profil = role.id " +
+                    "WHERE user.login = ? AND user.password = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, username);
+                preparedStatement.setString(2, password);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getString("name");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

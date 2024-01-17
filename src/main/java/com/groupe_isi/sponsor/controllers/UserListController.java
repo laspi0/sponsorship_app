@@ -93,25 +93,16 @@ public class UserListController {
 
     @FXML
     private void createUser() {
-        // Récupérer les valeurs des champs
         String nom = nomField.getText();
         String prenom = prenomField.getText();
         String login = loginField.getText();
         String password = passwordField.getText();
 
-        // Récupérer la valeur sélectionnée dans la ComboBox
         Integer profil = profileComboBox.getSelectionModel().getSelectedItem().equals("Candidat") ? 2 : 3;
 
-        // Créer un nouvel utilisateur
         User newUser = new User(0, nom, prenom, login, password, 1, profil);
-
-        // Ajouter l'utilisateur à la base de données
         userRepository.createUser(newUser);
-
-        // Recharger la liste des utilisateurs
         loadUsers();
-
-        // Effacer les champs du formulaire
         clearForm();
     }
 

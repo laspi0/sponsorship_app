@@ -8,11 +8,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.UserListController">
+<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.UserListController">
    <children>
-      <Button layoutX="322.0" layoutY="491.0" onAction="#deactivateUser" text="Désactiver l'utilisateur sélectionné" />
+      <AnchorPane layoutX="811.0" layoutY="25.0" prefHeight="458.0" prefWidth="316.0" style="-fx-background-color: transparent; -fx-border-color: white;" />
+      <Button layoutX="322.0" layoutY="491.0" onAction="#deactivateUser" style="-fx-background-color: transparent; -fx-border-color: white;" text="Désactiver l'utilisateur sélectionné" textFill="WHITE" />
 
-      <ComboBox fx:id="profileComboBox" layoutX="868.0" layoutY="359.0" prefHeight="25.0" prefWidth="202.0" promptText="Sélectionnez un profil">
+      <ComboBox fx:id="profileComboBox" layoutX="868.0" layoutY="326.0" prefHeight="25.0" prefWidth="202.0" promptText="Sélectionnez un profil" style="-fx-background-color: transparent; -fx-border-color: white;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Candidat" />
@@ -23,17 +24,14 @@
 
 
 
-      <!-- Les champs existants -->
-      <TextField fx:id="nomField" layoutX="864.0" layoutY="118.0" prefHeight="25.0" prefWidth="202.0" promptText="Nom" />
-      <TextField fx:id="prenomField" layoutX="864.0" layoutY="180.0" prefHeight="25.0" prefWidth="202.0" promptText="Prénom" />
-      <TextField fx:id="loginField" layoutX="864.0" layoutY="244.0" prefHeight="25.0" prefWidth="202.0" promptText="Login" />
-      <TextField fx:id="passwordField" layoutX="868.0" layoutY="301.0" prefHeight="25.0" prefWidth="202.0" promptText="Mot de passe" />
+      <TextField fx:id="nomField" layoutX="864.0" layoutY="85.0" prefHeight="25.0" prefWidth="202.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: white;" />
+      <TextField fx:id="prenomField" layoutX="864.0" layoutY="147.0" prefHeight="25.0" prefWidth="202.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: white;" />
+      <TextField fx:id="loginField" layoutX="864.0" layoutY="211.0" prefHeight="25.0" prefWidth="202.0" promptText="Login" style="-fx-background-color: transparent; -fx-border-color: white;" />
+      <TextField fx:id="passwordField" layoutX="868.0" layoutY="268.0" prefHeight="25.0" prefWidth="202.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: white;" />
 
-      <!-- Ajout du bouton pour créer un utilisateur -->
-      <Button layoutX="909.0" layoutY="414.0" onAction="#createUser" text="Ajouter Utilisateur" />
+      <Button layoutX="867.0" layoutY="379.0" onAction="#createUser" prefHeight="27.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-border-color: white;" text="Ajouter Utilisateur" textFill="WHITE" />
 
-      <TableView fx:id="userTableView" layoutX="31.0" layoutY="25.0" prefHeight="424.0" prefWidth="752.0">
-         <!-- Colonnes de la TableView -->
+      <TableView fx:id="userTableView" layoutX="31.0" layoutY="25.0" prefHeight="424.0" prefWidth="752.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5;">
       </TableView>
    </children>
 </AnchorPane>

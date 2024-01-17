@@ -78,7 +78,6 @@ public class User {
                 ", Nom: " + nom +
                 ", Prenom: " + prenom +
                 ", Login: " + login +
-                // Add other fields as needed
                 ", Actived: " + actived +
                 ", Profil: " + profil;
     }

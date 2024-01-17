@@ -15,4 +15,6 @@ module com.groupe_isi.sponsor {
     opens com.groupe_isi.sponsor.entity to javafx.fxml;
     exports com.groupe_isi.sponsor.repo;
     opens com.groupe_isi.sponsor.repo to javafx.fxml;
+    exports com.groupe_isi.sponsor.controllers.candidat;
+    opens com.groupe_isi.sponsor.controllers.candidat to javafx.fxml;
 }

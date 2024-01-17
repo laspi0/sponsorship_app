@@ -10,7 +10,6 @@ public class Db {
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
-    // Méthode pour obtenir une connexion à la base de données
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,7 +19,6 @@ public class Db {
         }
     }
 
-    // Méthode pour fermer une connexion à la base de données
     public static void closeConnection(Connection connection) {
         if (connection != null) {
             try {

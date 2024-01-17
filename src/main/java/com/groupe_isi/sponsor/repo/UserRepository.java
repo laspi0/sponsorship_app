@@ -46,7 +46,6 @@ public class UserRepository {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Gérer l'exception selon vos besoins
         }
     }
 
@@ -67,7 +66,6 @@ public class UserRepository {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Gérer l'exception selon vos besoins
         }
     }
 }

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
+<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.ElecteurController">
 
-<?import javafx.scene.control.Button?>
-<AnchorPane prefHeight="700.0" prefWidth="1233.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupe_isi.sponsor.controllers.DashboardController">
    <children>
-      <Text layoutX="528.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le Dashboard!">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Button layoutX="528.0" layoutY="250.0"  text="Désactiver l'utilisateur sélectionné" />
-      <!-- Ajoutez d'autres éléments d'interface utilisateur au besoin -->
+      <VBox alignment="CENTER" layoutX="46.0" layoutY="41.0" prefHeight="473.0" prefWidth="675.0" spacing="10">
+         <Text style="-fx-font-size: 24; -fx-text-fill: white;" text="Liste des Électeurs" />
+         <TableView fx:id="electeurTableView" prefHeight="397.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #1B5E20; -fx-border-width: 2; -fx-font-size: 16;" />
+      </VBox>
    </children>
 </AnchorPane>
